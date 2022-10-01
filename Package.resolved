@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "TCCore",
+        "repositoryURL": "https://github.com/SRGSSR/TCCore-xcframework-apple.git",
+        "state": {
+          "branch": null,
+          "revision": "6f5e24bed11558da8c1479157ec74a0485443834",
+          "version": "5.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

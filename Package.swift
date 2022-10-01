@@ -3,7 +3,7 @@
 import PackageDescription
 
 struct PackageMetadata {
-    static let version: String = "5.1.2"
+    static let version: String = "5.1.4"
     static let checksum: String = "fdd79aa8e270aedc165c2d0456075793b9983faabeb4d8218a9f987210ea9a1b"
 }
 
@@ -16,7 +16,7 @@ let package = Package(
     products: [
         .library(
             name: "TCServerSide",
-            targets: ["TCServerSide"]
+            targets: ["TCServerSideWrapper"]
         ),
     ],
     dependencies: [
@@ -27,6 +27,10 @@ let package = Package(
             name: "TCServerSide",
             url: "https://github.com/SRGSSR/TCServerSide-xcframework-apple/releases/download/\(PackageMetadata.version)/TCServerSide.xcframework.zip",
             checksum: PackageMetadata.checksum
+        ),
+        .target(
+            name: "TCServerSideWrapper",
+            dependencies: [.target(name: "TCServerSide"), "TCCore"]
         )
     ]
 )
